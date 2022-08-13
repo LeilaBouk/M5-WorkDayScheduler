@@ -41,9 +41,13 @@ var save = $(".save");
 
 // save user text input
 function saveSchedule() {
-    console.log(this);
-    // $(this).parent().addClass("future");
     
+  var schedText = $(this).siblings(".form-control").val();
+  var hour = $(this).parent().attr("id");
+
+  console.log(hour);
+  console.log(schedText);
+
    
 } 
 
