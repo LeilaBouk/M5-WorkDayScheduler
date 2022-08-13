@@ -3,7 +3,7 @@ var now = moment().format("dddd, MMMM Do");
 $("#currentDay").text(now);
 
 
-var save = $("#save");
+var save = $(".save");
 
 // save user text input
 function saveSchedule() {
