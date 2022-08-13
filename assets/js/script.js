@@ -42,13 +42,34 @@ var save = $(".save");
 // save user text input
 function saveSchedule() {
     
+    // Get the elements based on this which is the button
+    // so the sibling which is the form text get its value
+    // and the parent which is the hour the button is inside
   var schedText = $(this).siblings(".form-control").val();
   var hour = $(this).parent().attr("id");
 
   console.log(hour);
   console.log(schedText);
 
-   
+//   Set the items in local storage
+   localStorage.setItem(hour, schedText);
 } 
 
+// Get each item
+function loadSchedule() {
+
+ $("#9 .form-control").val(localStorage.getItem("9"));
+ $("#10 .form-control").val(localStorage.getItem("10"));
+ $("#11 .form-control").val(localStorage.getItem("11"));
+ $("#12 .form-control").val(localStorage.getItem("12"));
+ $("#13 .form-control").val(localStorage.getItem("13"));
+ $("#14 .form-control").val(localStorage.getItem("14"));
+ $("#15 .form-control").val(localStorage.getItem("15"));
+ $("#16 .form-control").val(localStorage.getItem("16"));
+ $("#17 .form-control").val(localStorage.getItem("17"));
+
+}
+
 save.on("click", saveSchedule);
+
+loadSchedule();
