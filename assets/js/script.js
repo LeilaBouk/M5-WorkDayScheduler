@@ -2,24 +2,39 @@
 var now = moment().format("dddd, MMMM Do");
 $("#currentDay").text(now);
 
-// Check the current time
+// --------------
+
+// Check the current time in military time
 var timeCheck = moment().format("HH");
 
 var timeBlock = $(".row");
 
-actTime = (timeBlock.attr("id"));
-
-console.log(actTime);
 console.log(timeCheck);
 
+// check each rows id and do if else
 function blockColor() {
-    if (actTime > timeCheck) {
-        timeBlock.addClass("past");
+
+ $(timeBlock).each(function() {
+    var actTime = $(this).attr("id");
+    // console.log(actTime);
+
+ if (actTime < timeCheck) {
+        $(this).addClass("past");
     }
+else if (actTime === timeCheck) {
+    $(this).addClass("present");
+}
+else if (actTime > timeCheck) {
+    $(this).addClass("future");
+}
+
+ })
+
 }
 
 blockColor();
 
+// -------------------
 
 // Get the save button
 var save = $(".save");
@@ -27,7 +42,7 @@ var save = $(".save");
 // save user text input
 function saveSchedule() {
     console.log(this);
-    $(this).parent().addClass("past");
+    // $(this).parent().addClass("future");
     
    
 } 
