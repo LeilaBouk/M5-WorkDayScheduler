@@ -7,7 +7,10 @@ var save = $(".save");
 
 // save user text input
 function saveSchedule() {
-    console.log("save");
+    console.log(this);
+    $(this).parent().hide();
+    // var time = $("the parent elements ID") 
+   
 } 
 
 save.on("click", saveSchedule);
