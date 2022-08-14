@@ -44,7 +44,9 @@ HTML + CSS + JavaScript
 
 ## Technologies 🧩
 Moment.js
+<br>
 jQuery
+<br>
 Bootstrap
 
 ## Usage 🐗
