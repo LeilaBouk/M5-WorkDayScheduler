@@ -32,8 +32,6 @@ else if (actTime > timeCheck) {
 
 }
 
-blockColor();
-
 // -------------------
 
 // Get the save button
@@ -70,6 +68,22 @@ function loadSchedule() {
 
 }
 
-save.on("click", saveSchedule);
+// Delete
 
+var deleteText = $(".delete");
+
+function deleteSchedule() {
+    var schedText = $(this).siblings(".form-control").val();
+    var hour = $(this).parent().attr("id");
+
+    localStorage.removeItem(hour, schedText);
+    console.log(schedText);
+    var schedText = $(this).siblings(".form-control").val("");
+ 
+}
+
+
+deleteText.on("click", deleteSchedule);
+save.on("click", saveSchedule);
+blockColor();
 loadSchedule();
